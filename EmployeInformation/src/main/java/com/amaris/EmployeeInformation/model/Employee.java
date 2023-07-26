@@ -19,7 +19,8 @@ public class Employee {
 
     @JsonProperty("profile_image")
     private String profileImage;
-    private String employeeAnualSalary;
+    @JsonProperty("employee_annual_salary")
+    private String employeeAnnualSalary;
 
 
     public Employee() {
@@ -65,11 +66,11 @@ public class Employee {
         this.profileImage = profileImage;
     }
 
-    public String getEmployeeAnualSalary() {
-        return employeeAnualSalary;
+    public String getEmployeeAnnualSalary() {
+        return employeeAnnualSalary;
     }
 
-    public void setEmployeeAnualSalary(String employeeAnualSalary) {
-        this.employeeAnualSalary = employeeAnualSalary;
+    public void setEmployeeAnnualSalary(String employeeAnnualSalary) {
+        this.employeeAnnualSalary = employeeAnnualSalary;
     }
 }

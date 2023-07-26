@@ -9,19 +9,19 @@ import java.util.List;
 public class EmployeeUseCase {
 
     private final EmployeesInformationService employeesInformationService;
-    private final AnualSalaryUseCase anualSalaryUseCase;
+    private final AnnualSalaryUseCase annualSalaryUseCase;
 
-    public EmployeeUseCase(EmployeesInformationService employeesInformationService, AnualSalaryUseCase anualSalaryUseCase) {
+    public EmployeeUseCase(EmployeesInformationService employeesInformationService, AnnualSalaryUseCase annualSalaryUseCase) {
         this.employeesInformationService = employeesInformationService;
-        this.anualSalaryUseCase = anualSalaryUseCase;
+        this.annualSalaryUseCase = annualSalaryUseCase;
     }
 
     public List<Employee> getEmployeesInformation(Integer id){
         if(id!=null){
             List<Employee> employeList =  new ArrayList<>();
             employeList.add(employeesInformationService.getEmployeesInformation(id));
-            return  anualSalaryUseCase.setAnnualSalary(employeList);
+            return  annualSalaryUseCase.setAnnualSalary(employeList);
         }
-        return employeesInformationService.getEmployeesInformation();
+        return annualSalaryUseCase.setAnnualSalary(employeesInformationService.getEmployeesInformation());
     }
 }
