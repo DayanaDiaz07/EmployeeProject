@@ -1,0 +1,37 @@
+<div class="container mt-4">
+  <div class="form-group row">
+    <label for="employeeId" class="col-sm-2 col-form-label">ID del empleado:</label>
+    <div class="col-sm-4">
+      <input type="number" class="form-control" id="employeeId" [(ngModel)]="employeeId">
+    </div>
+    <div class="col-sm-6">
+      <button class="btn btn-primary" (click)="searchEmployees()">Buscar</button>
+      <button class="btn btn-secondary" (click)="getAllEmployees()">Mostrar todos</button>
+    </div>
+  </div>
+
+  <div *ngIf="errorMessage" class="alert alert-danger">
+    {{ errorMessage }}
+  </div>
+
+  <table class="table table-bordered">
+    <thead>
+      <tr>
+        <th>ID</th>
+        <th>Name</th>
+        <th>Month Salary</th>
+        <th>Age</th>
+        <th>Annual Salary</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr *ngFor="let employee of employees">
+        <td>{{ employee.id }}</td>
+        <td>{{ employee.employee_name }}</td>
+        <td>{{ employee.employee_salary }}</td>
+        <td>{{ employee.employee_age }}</td>
+        <td>{{ employee.employee_annual_salary }}</td>
+      </tr>
+    </tbody>
+  </table>
+</div>
