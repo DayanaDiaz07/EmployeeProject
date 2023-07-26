@@ -48,4 +48,16 @@ class EmployeeUseCaseTest {
         assertEquals(employeeList, res);
     }
 
+    @Test
+    void getEmployeesInformationWhenIdIsNull() {
+        List<Employee> employeeList = new ArrayList<>();
+        employeeList.add(employee);
+        when(employeesInformationService.getEmployeesInformation(anyInt())).thenReturn(employee);
+        when(annualSalaryUseCase.setAnnualSalary(anyList())).thenReturn(employeeList);
+        List<Employee> res = employeeUseCase.getEmployeesInformation(null);
+
+
+        assertEquals(employeeList, res);
+    }
+
 }
